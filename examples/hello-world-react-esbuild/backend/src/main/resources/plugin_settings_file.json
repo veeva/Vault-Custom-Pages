@@ -1,5 +1,5 @@
 {
-  "deployment_option": "replace_all",
+  "deployment_option": "incremental",
   "package_name": "Vault-Java-SDK-Custom-Pages-Hello-World-React-Esbuild",
   "package_type": "migration__v",
   "package_summary": "Vault Java SDK code for Vault Custom Pages Hello World (React Esbuild)",
