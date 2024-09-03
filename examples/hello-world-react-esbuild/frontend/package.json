@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "bundle": "esbuild src/index.jsx --bundle --outfile=dist/index.js --loader:.js=jsx --format=esm --sourcemap --minify",
+    "zip": "zip --recurse-paths --filesync distribution.zip dist distribution-manifest.json",
+    "build": "npm run bundle && npm run zip"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@veeva/vault-web-sdk": "https://vault-web-sdk-releases-public.s3.us-west-2.amazonaws.com/main/veeva-vault-web-sdk-3.1.0.tgz"
+  },
+  "devDependencies": {
+    "esbuild": "^0.22.0"
+  }
+}

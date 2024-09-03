@@ -1,0 +1,16 @@
+RECREATE Page create_object_form__c (
+   label('Simple Form'),
+   active(true),
+   client_distribution('Clientdistribution.create_object_form__c'),
+   page_client_code('Pageclientcode.create_object_form__c'),
+   page_controller('Pagecontroller.com.veeva.vault.custom.pages.SimpleFormController'),
+   url_path_name('simple-form')
+);
+
+RECREATE Tab create_object_form__c (
+   active(true),
+   order(1),
+   label('Simple Form'),
+   page('Page.create_object_form__c'),
+   url('https://${Vault.domain}/ui/#custom/page/${Page.url_path_name}')
+);

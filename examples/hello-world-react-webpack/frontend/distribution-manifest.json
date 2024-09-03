@@ -1,0 +1,13 @@
+{
+    "pages": [
+        {
+            "name": "hello_world_react_webpack__c",
+            "file": "dist/index.js",
+            "export": "hello"
+        }
+    ],
+    "stylesheets": [
+      "dist/index.css"
+    ],
+    "name": "hello_world_react_webpack__c"
+}

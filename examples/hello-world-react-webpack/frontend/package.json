@@ -1,0 +1,26 @@
+{
+    "name": "hello-world-react-webpack",
+    "version": "1",
+    "main": "index.js",
+    "sideEffects": [
+        "./src/app/*.css"
+    ],
+    "scripts": {
+        "bundle": "webpack",
+        "zip": "zip --recurse-paths --filesync distribution.zip dist distribution-manifest.json",
+        "build": "npm run bundle && npm run zip"
+    },
+    "dependencies": {
+        "@veeva/vault-web-sdk": "https://vault-web-sdk-releases-public.s3.us-west-2.amazonaws.com/main/veeva-vault-web-sdk-3.1.0.tgz",
+        "babel-loader": "^9.1.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "webpack": "^5.88.2",
+        "webpack-cli": "^5.1.4"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.22.20",
+        "@babel/preset-react": "^7.22.15",
+        "mini-css-extract-plugin": "^2.9.1"
+    }
+}

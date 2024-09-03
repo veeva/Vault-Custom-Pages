@@ -1,0 +1,9 @@
+{
+    "pages": [
+        {
+            "name": "users_data_grid__c",
+            "file": "dist/index.js"
+        }
+    ],
+    "name": "users_data_grid__c"
+}

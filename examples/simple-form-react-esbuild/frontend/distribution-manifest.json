@@ -1,0 +1,9 @@
+{
+    "pages": [
+        {
+            "name": "create_object_form__c",
+            "file": "dist/index.js"
+        }
+    ],
+    "name": "create_object_form__c"
+}

@@ -1,0 +1,16 @@
+RECREATE Page users_data_grid__c (
+   label('Data Grid (Users)'),
+   active(true),
+   client_distribution('Clientdistribution.users_data_grid__c'),
+   page_client_code('Pageclientcode.users_data_grid__c'),
+   page_controller('Pagecontroller.com.veeva.vault.custom.pages.DataGridController'),
+   url_path_name('data-grid')
+);
+
+RECREATE Tab users_data_grid__c (
+   active(true),
+   order(1),
+   label('Data Grid (Users)'),
+   page('Page.users_data_grid__c'),
+   url('https://${Vault.domain}/ui/#custom/page/${Page.url_path_name}')
+);

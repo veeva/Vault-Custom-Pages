@@ -1,0 +1,16 @@
+RECREATE Page hello_world_react_esbuild__c (
+   label('Hello World (React Esbuild)'),
+   active(true),
+   client_distribution('Clientdistribution.hello_world_react_esbuild__c'),
+   page_client_code('Pageclientcode.hello_world_react_esbuild__c'),
+   page_controller('Pagecontroller.com.veeva.vault.custom.pages.HelloWorldController'),
+   url_path_name('hello-world-react-esbuild')
+);
+
+RECREATE Tab hello_world_react_esbuild__c (
+   active(true),
+   order(1),
+   label('Hello World (React Esbuild)'),
+   page('Page.hello_world_react_esbuild__c'),
+   url('https://${Vault.domain}/ui/#custom/page/${Page.url_path_name}')
+);

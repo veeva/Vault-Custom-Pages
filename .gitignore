@@ -1,0 +1,13 @@
+target/
+*.class
+*.ear
+*.logs
+*.iml
+test.properties
+dependency-reduced-pom.xml
+
+# Mac Files
+.DS_Store
+
+#IntelliJ
+.idea/

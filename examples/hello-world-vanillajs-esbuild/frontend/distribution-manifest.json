@@ -1,0 +1,10 @@
+{
+    "pages": [
+        {
+            "name": "hello_world_vanilla_js__c",
+            "file": "dist/index.js",
+            "export": "world"
+        }
+    ],
+    "name": "hello_world_vanilla_js__c"
+}
