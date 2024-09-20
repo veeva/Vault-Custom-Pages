@@ -1,10 +1,10 @@
 # Vault Custom Pages
-For a high-level overview of Custom Pages, refer to [this Share page](https://veeva.veevashare.com/03645b0d85e3801000/) (under construction).
+For a high-level overview of Custom Pages, refer to [this Share page](https://veeva.veevashare.com/03645b0d85e3801000/).
 
 ## Getting started
 
-- [ ] Request the Vault Product team enable Custom Pages in your Vault (24R2.2+)
-- [ ] Download and import [this Postman collection](https://github.com/veeva/Vault-Custom-Pages/blob/main/examples/custom_pages.postman_collection.json) and set up a Postman environment for your Vault (use API version v24.3).
+- [ ] [Submit a request](https://docs.google.com/forms/d/e/1FAIpQLSe74ZvpPdbKEDUdECcpDcpzK5zFNsFjkzFDOqwl1TySMDjPqQ/viewform) to have the Vault Product team enable Custom Pages in your Vault 
+- [ ] Download and import [this Postman collection](https://github.com/veeva/Vault-Custom-Pages/blob/main/examples/custom_pages.postman_collection.json) and set up a Postman environment for your Vault (minimum API version v24.3).
 
 ***
 
