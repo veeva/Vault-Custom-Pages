@@ -6,7 +6,7 @@ For a high-level overview of Custom Pages, refer to [this Share page](https://ve
 - [ ] Request the Vault Product team enable Custom Pages in your Vault (24R2.2+)
 - [ ] Download and import [this Postman collection](https://github.com/veeva/Vault-Custom-Pages/blob/main/examples/custom_pages.postman_collection.json) and set up a Postman environment for your Vault (use API version v24.3).
 
-***
+---
 
 ### Hello World
 - [ ] Download the [hello-world-react-esbuild](https://github.com/veeva/Vault-Custom-Pages/tree/main/examples/hello-world-react-esbuild) example project.
@@ -15,7 +15,7 @@ For a high-level overview of Custom Pages, refer to [this Share page](https://ve
   - This VPK includes both the required Java SDK and MDL for a Page/Tab.
 - [ ] You can now navigate to the Tab or directly to the page URL: `https://{vaultDNS}/ui/#custom/page/hello-world-react-esbuild`
 
-***
+---
 
 ### Development
 The below steps are designed for the pre-configured examples in this repo (e.g. Simple Form). We recommend starting with
@@ -40,7 +40,7 @@ one of these projects and building out. Otherwise, you can refer to the example 
 </dependency>
 ```
 
-***
+---
 
 ## Workarounds
 
@@ -71,6 +71,15 @@ export default vault.definePage(({ element }) => {
     );
 })
 ```
+Some libraries that use Emotion for styling rely on attributes set on the <html> tag to render styles correctly. However, when UI code is placed within the Shadow DOM, it isn't wrapped in an <html> tag. This can lead to visual and CSS issues due to the absence of necessary attributes.
+
+To address these issues, it is recommended to wrap your UI code in a `<div>` or a similar container and apply the necessary attributes to ensure proper styling. For instance, Chakra UI requires the following attributes for correct CSS rendering:
+
+```
+ data-theme="light" style={{ 'color-scheme': 'light' }}
+```
+
+These attributes should be added to a container element that encapsulates the entire UI. When using other UI libraries, different attributes might be necessary. It is advisable to inspect the iframe in which the UI code is initially served to identify any specific attributes that need to be applied.
 
 - Styled-Components
 ```
@@ -98,4 +107,4 @@ export default vault.definePage(({ element }) => {
 })
 ```
 
-***
+---
