@@ -71,7 +71,7 @@ export default vault.definePage(({ element }) => {
     );
 })
 ```
-Some libraries that use Emotion for styling rely on attributes set on the <html> tag to render styles correctly. However, when UI code is placed within the Shadow DOM, it isn't wrapped in an <html> tag. This can lead to visual and CSS issues due to the absence of necessary attributes.
+Some libraries that use Emotion for styling rely on attributes set on the `<html>` tag to render styles correctly. However, when UI code is placed within the Shadow DOM, it isn't wrapped in an `<html>` tag. This can lead to visual and CSS issues due to the absence of necessary attributes.
 
 To address these issues, it is recommended to wrap your UI code in a `<div>` or a similar container and apply the necessary attributes to ensure proper styling. For instance, Chakra UI requires the following attributes for correct CSS rendering:
 
