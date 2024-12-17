@@ -1,0 +1,11 @@
+{
+  "pages": [
+    {
+      "name": "hello_world_react_esbuild__c",
+      "file": "dist/index.js",
+      "export": "helloWorld"
+    }
+  ],
+  "name": "hello_world_react_esbuild__c",
+  "stylesheets": ["dist/index.css"]
+}

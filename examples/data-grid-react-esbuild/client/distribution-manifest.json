@@ -1,0 +1,9 @@
+{
+  "pages": [
+    {
+      "name": "data_grid_react_esbuild__c",
+      "file": "dist/index.js"
+    }
+  ],
+  "name": "data_grid_react_esbuild__c"
+}
