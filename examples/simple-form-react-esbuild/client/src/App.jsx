@@ -5,6 +5,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardHeader from "@mui/material/CardHeader";
 import CircularProgress from "@mui/material/CircularProgress";
+import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import React, { useState } from "react";
@@ -72,68 +73,76 @@ export default function App({ sendEvent }) {
         alignItems: "flex-start",
       }}
     >
-      <Card sx={{ minWidth: 800, backgroundColor: "#f8f8f8", margin: 5 }}>
+      <Card sx={{
+        minWidth: 300,
+        backgroundColor: '#f8f8f8',
+        margin: 2,
+        width: { xs: '100%', sm: 'auto' }, }}
+      >
         <CardHeader
           title="Create Employee Records"
           sx={{ backgroundColor: "#1b2f54", color: "#ffffff", paddingY: 1 }}
         />
         <CardContent>
-          <Box
-            component="form"
-            sx={{
-              "& .MuiTextField-root": { margin: 1, width: "100%" },
-              display: "flex",
-            }}
-          >
-            <TextField
-              required
-              id="first-name-input-field"
-              label="First Name"
-              value={firstName}
-              onChange={(event) => {
-                setFirstName(event.target.value);
-              }}
-              sx={{ backgroundColor: "#ffffff" }}
-              InputLabelProps={{
-                sx: { fontSize: 18 },
-              }}
-              InputProps={{
-                sx: { fontSize: 18 },
-              }}
-            />
-            <TextField
-              required
-              id="last-name-input-field"
-              label="Last Name"
-              value={lastName}
-              onChange={(event) => {
-                setLastName(event.target.value);
-              }}
-              sx={{ backgroundColor: "#ffffff" }}
-              InputLabelProps={{
-                sx: { fontSize: 18 },
-              }}
-              InputProps={{
-                sx: { fontSize: 18 },
-              }}
-            />
-            <TextField
-              required
-              id="email-input-field"
-              label="Email"
-              value={email}
-              onChange={(event) => {
-                setEmail(event.target.value);
-              }}
-              sx={{ backgroundColor: "#ffffff" }}
-              InputLabelProps={{
-                sx: { fontSize: 18 },
-              }}
-              InputProps={{
-                sx: { fontSize: 18 },
-              }}
-            />
-          </Box>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={4}>
+              <TextField
+                required
+                id="first-name-input-field"
+                label="First Name"
+                fullWidth
+                value={firstName}
+                onChange={(event) => {
+                  setFirstName(event.target.value);
+                }}
+                sx={{ backgroundColor: "#ffffff" }}
+                InputLabelProps={{
+                  sx: { fontSize: 18 },
+                }}
+                InputProps={{
+                  sx: { fontSize: 18 },
+                }}
+              />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <TextField
+                required
+                id="last-name-input-field"
+                label="Last Name"
+                fullWidth
+                value={lastName}
+                onChange={(event) => {
+                  setLastName(event.target.value);
+                }}
+                sx={{ backgroundColor: "#ffffff" }}
+                InputLabelProps={{
+                  sx: { fontSize: 18 },
+                }}
+                InputProps={{
+                  sx: { fontSize: 18 },
+                }}
+              />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <TextField
+                required
+                id="email-input-field"
+                label="Email"
+                fullWidth
+                value={email}
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                }}
+                sx={{ backgroundColor: "#ffffff" }}
+                InputLabelProps={{
+                  sx: { fontSize: 18 },
+                }}
+                InputProps={{
+                  sx: { fontSize: 18 },
+                }}
+              />
+            </Grid>
+          </Grid>
           {isCreatingEmployeeRecord ? (
             <CircularProgress />
           ) : (
