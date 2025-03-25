@@ -6,11 +6,3 @@ RECREATE Page hello_world_react_webpack__c (
    page_controller('Pagecontroller.com.veeva.vault.custom.pages.HelloWorldController'),
    url_path_name('hello-world-react-webpack')
 );
-
-RECREATE Tab hello_world_react_webpack__c (
-   active(true),
-   order(1),
-   label('Hello World (React Webpack)'),
-   page('Page.hello_world_react_webpack__c'),
-   url('https://${Vault.domain}/ui/#custom/page/${Page.url_path_name}')
-);

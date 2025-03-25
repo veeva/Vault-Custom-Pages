@@ -6,11 +6,3 @@ RECREATE Page simple_form_react_esbuild__c (
    page_controller('Pagecontroller.com.veeva.vault.custom.pages.SimpleFormController'),
    url_path_name('simple-form')
 );
-
-RECREATE Tab simple_form_react_esbuild__c (
-   active(true),
-   order(1),
-   label('Simple Form'),
-   page('Page.simple_form_react_esbuild__c'),
-   url('https://${Vault.domain}/ui/#custom/page/${Page.url_path_name}')
-);

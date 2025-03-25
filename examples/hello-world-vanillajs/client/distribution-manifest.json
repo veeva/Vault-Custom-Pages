@@ -1,0 +1,18 @@
+{
+    "pages": [
+        {
+            "name": "hello_world_vanillajs__c",
+            "file": "src/index.js",
+            "export": "helloWorld"
+        }
+    ],
+    "stylesheets": [
+        "src/index.css"
+    ],
+    "importmap": {
+        "imports": {
+          "@veeva/vault": "src/@veeva/vault/index.mjs"
+        }
+    },
+    "name": "hello_world_vanillajs__c"
+}

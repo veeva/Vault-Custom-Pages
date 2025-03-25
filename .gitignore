@@ -1,10 +1,12 @@
 target/
+toolbox/
 *.class
 *.ear
 *.logs
 *.iml
 test.properties
 dependency-reduced-pom.xml
+vault-toolbox.json
 
 # Mac Files
 .DS_Store

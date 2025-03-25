@@ -1,7 +1,7 @@
 {
   "scripts": {
     "bundle": "node esbuild.mjs",
-    "zip": "zip --recurse-paths --filesync distribution.zip dist distribution-manifest.json",
+    "zip": "zip --recurse-paths --filesync distribution.zip src dist distribution-manifest.json",
     "build": "npm run bundle && npm run zip"
   },
   "dependencies": {
@@ -10,7 +10,7 @@
     "@mui/icons-material": "^5.16.7",
     "@mui/material": "^5.16.6",
     "@tanstack/react-table": "^8.20.5",
-    "@veeva/vault": "https://vault-web-sdk-releases-public.s3.us-west-2.amazonaws.com/main/veeva-vault-24.3.2-release.1.0.1.tgz",
+    "@veeva/vault": "https://vault-web-sdk-releases-public.s3.us-west-2.amazonaws.com/main/veeva-vault-24.3.4-release.1.0.2.tgz",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

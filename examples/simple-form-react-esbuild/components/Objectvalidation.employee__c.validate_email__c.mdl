@@ -1,0 +1,8 @@
+RECREATE Objectvalidation employee__c.validate_email__c (
+   label('Validate Email'),
+   active(true),
+   expression('Contains(email__c, ''@'')'),
+   description(),
+   error_message('Email value is invalid (must contain ''@'')'),
+   error_location('email__c')
+);

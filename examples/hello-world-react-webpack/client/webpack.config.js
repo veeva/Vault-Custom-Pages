@@ -2,7 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: "production",
+  mode: "development",
   devtool: "cheap-module-source-map",
   entry: {
     index: path.resolve("./src/app/index.jsx"),

@@ -1,0 +1,7 @@
+RECREATE Tab hello_world_typescript_esbuild__c (
+   active(true),
+   order(1),
+   label('Hello World (Typescript Esbuild)'),
+   page('Page.hello_world_typescript_esbuild__c'),
+   url('https://${Vault.domain}/ui/#custom/page/${Page.url_path_name}')
+);

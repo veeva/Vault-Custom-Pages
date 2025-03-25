@@ -1,0 +1,8 @@
+RECREATE Page hello_world_vanillajs__c (
+   label('Hello World (Vanilla JS)'),
+   active(true),
+   client_distribution('Clientdistribution.hello_world_vanillajs__c'),
+   page_client_code('Pageclientcode.hello_world_vanillajs__c'),
+   page_controller('Pagecontroller.com.veeva.vault.custom.pages.HelloWorldController'),
+   url_path_name('hello-world-vanillajs')
+);
