@@ -1,9 +1,10 @@
 {
-  "pages": [
-    {
-      "name": "simple_form_react_esbuild__c",
-      "file": "dist/index.js"
-    }
-  ],
-  "name": "simple_form_react_esbuild__c"
+    "pages": [
+        {
+            "name": "simple_form_react_esbuild__c",
+            "file": "dist/index.js"
+        }
+    ],
+    "stylesheets": ["dist/index.css"],
+    "name": "simple_form_react_esbuild__c"
 }

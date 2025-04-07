@@ -1,6 +1,6 @@
 {
   "name": "@veeva/vault",
-  "version": "24.3.4-release.1.0.2",
+  "version": "25.1.0-release.1.0.5",
   "description": "Vault Web SDK",
   "main": "./index.mjs",
   "publishConfig": {
@@ -8,15 +8,14 @@
   },
   "files": [
     "**",
-    "!tsconfig.json",
-    "!types"
+    "!tsconfig.json"
   ],
   "exports": {
     ".": {
-      "types": "./index.d.mts",
+      "default": "./index.mjs",
       "import": "./index.mjs",
       "require": "./index.cjs",
-      "default": "./index.mjs"
+      "types": "./index.d.mts"
     }
   },
   "module": "./index.mjs",

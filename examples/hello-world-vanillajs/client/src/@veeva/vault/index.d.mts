@@ -1,30 +1,38 @@
-/**
- * Used to ensure we know of all the plugin types in our internal tooling
- * @internal
- */
-export declare type AnyPlugin = PagePlugin | FakePlugin;
+/* Excluded from this release type: AnyPlugin */
 
+/**
+ * definePage is the mechanism for registering Pageclientcode implementation. Vault Java SDK
+ * PageControllers can pass data.
+ *
+ *
+ * @param initialize - The callback function that is executed from a PageController's onLoad
+ * Response when first initialized.
+ *
+ * @returns A JsonObject which is returned from the response from the Vault Java SDK onEvent method
+ *
+ * @example Pagecliendcode implementation with Vanilla JS
+ * ```js
+ *
+ * export default Vault.definePage(({element, data, pageContext, sendEvent})=>{
+ *     element.textContent="Hello World";
+ * });
+ * ```
+ *
+ * @example Pagecliendcode implementation with React
+ * ```js
+ *
+ * import { createRoot } from 'react-dom/client';
+ * import HelloWorld from './helloWorld';
+ *
+ *
+ * export default Vault.definePage(({element, data, pageContext, sendEvent})=>{
+ *     const root = createRoot(element);
+ *     root.render(<HelloWorld />);
+ * })
+ *
+ * ```
+ */
 export declare const definePage: <Data>(initialize: (params: PageParameters<Data>) => unknown) => unknown;
-
-/**
- * Only used to ensure the packages work with multiple plugin types
- * @internal
- */
-export declare interface FakeParameters<Data> {
-    data: Data;
-    element: HTMLElement;
-    sendEvent: SendEvent;
-}
-
-/**
- * Only used to ensure the packages work with multiple plugin types
- * @internal
- */
-export declare interface FakePlugin<Data = unknown> {
-    type: 'fake';
-    factory: (params: FakeParameters<Data>) => unknown;
-    demoParams?: Partial<FakeParameters<Data>>;
-}
 
 /**
  * The context which is available when a Page is run inside a browser from the definePage load callback.
@@ -53,31 +61,9 @@ export declare interface PageParameters<Data> {
     sendEvent: SendEvent;
 }
 
-/**
- * Plugin type shouldn't be documented because sdk consumers don't need to know the return type
- * @internal
- */
-export declare interface PagePlugin<Data = unknown> {
-    type: 'page';
-    factory: (params: PageParameters<Data>) => unknown;
-    demoParams?: Partial<PageParameters<Data>>;
-}
+/* Excluded from this release type: PagePlugin */
 
-/**
- * This is defined in SDK because it makes sense that the SDK defines the public interface, and
- * technically, the globals in the iframe are the public interface.
- *
- * If you think of customer code as being written in vanilla JS (no imports) then they'd essentially
- * be writing code like `window.__vaultWebSdkClient.definePage(...)`, so that part is the public API.
- *
- * @internal
- */
-export declare type Runtime = {
-    __vaultMeta: {
-        version: string | null;
-    };
-    __vaultModuleV5: VaultModule;
-};
+/* Excluded from this release type: Runtime */
 
 /**.
  * Client to fire events that the Vault Java SDK PageController onEvent method handles.
@@ -131,48 +117,5 @@ export declare interface VaultApiClient {
 }
 
 export declare const vaultApiClient: VaultApiClient;
-
-export declare interface VaultModule {
-    vaultApiClient: VaultApiClient;
-    /**
-     * definePage is the mechanism for registering Pageclientcode implementation. Vault Java SDK
-     * PageControllers can pass data.
-     *
-     *
-     * @param initialize - The callback function that is executed from a PageController's onLoad
-     * Response when first initialized.
-     *
-     * @returns A JsonObject which is returned from the response from the Vault Java SDK onEvent method
-     *
-     * @example Pagecliendcode implementation with Vanilla JS
-     * ```js
-     *
-     * export default Vault.definePage(({element, data, pageContext, sendEvent})=>{
-     *     element.textContent="Hello World";
-     * });
-     * ```
-     *
-     * @example Pagecliendcode implementation with React
-     * ```js
-     *
-     * import { createRoot } from 'react-dom/client';
-     * import HelloWorld from './helloWorld';
-     *
-     *
-     * export default Vault.definePage(({element, data, pageContext, sendEvent})=>{
-     *     const root = createRoot(element);
-     *     root.render(<HelloWorld />);
-     * })
-     *
-     * ```
-     */
-    definePage<Data>(initialize: (params: PageParameters<Data>) => unknown): unknown;
-    /**
-     * This is only to ensure websdk works with more than one type of plugin.
-     * Please remove once we have a type other than "page"
-     * @internal
-     */
-    defineFake<Data>(initialize: (params: FakeParameters<Data>) => unknown): unknown;
-}
 
 export { }

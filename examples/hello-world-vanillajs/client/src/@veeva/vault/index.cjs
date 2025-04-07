@@ -1,2 +1,36 @@
-"use strict";var i=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var s=Object.prototype.hasOwnProperty;var m=(a,e)=>{for(var n in e)i(a,n,{get:e[n],enumerable:!0})},P=(a,e,n,o)=>{if(e&&typeof e=="object"||typeof e=="function")for(let t of p(e))!s.call(a,t)&&t!==n&&i(a,t,{get:()=>e[t],enumerable:!(o=u(e,t))||o.enumerable});return a};var g=a=>P(i({},"__esModule",{value:!0}),a);var k={};m(k,{definePage:()=>d,vaultApiClient:()=>f});module.exports=g(k);var l="1.0.2";var r=window;r.__vaultMeta.version=l;var{definePage:d,vaultApiClient:f}=r.__vaultModuleV5;
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+// core/sdk/index.mts
+var sdk_exports = {};
+__export(sdk_exports, {
+  definePage: () => definePage,
+  vaultApiClient: () => vaultApiClient
+});
+module.exports = __toCommonJS(sdk_exports);
+
+// core/sdk/package.json
+var version = "1.0.5";
+
+// core/sdk/index.mts
+var win = window;
+win.__vaultMeta.version = version;
+var definePage = win.__vaultModuleV5.definePage;
+var vaultApiClient = win.__vaultModuleV5.vaultApiClient;
 //# sourceMappingURL=index.cjs.map

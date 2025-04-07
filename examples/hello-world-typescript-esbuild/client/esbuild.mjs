@@ -1,10 +1,10 @@
-import * as esbuild from "esbuild";
+import * as esbuild from 'esbuild';
 
 await esbuild.build({
-  entryPoints: ["src/index.tsx"],
-  bundle: true,
-  outdir: "dist",
-  format: "esm",
-  sourcemap: true,
-  minify: true,
+    entryPoints: ['src/index.tsx'],
+    bundle: true,
+    outdir: 'dist',
+    format: 'esm',
+    sourcemap: true,
+    minify: true,
 });

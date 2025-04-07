@@ -1,9 +1,10 @@
 {
-  "pages": [
-    {
-      "name": "data_grid_react_esbuild__c",
-      "file": "dist/index.js"
-    }
-  ],
-  "name": "data_grid_react_esbuild__c"
+    "pages": [
+        {
+            "name": "data_grid_react_esbuild__c",
+            "file": "dist/index.js"
+        }
+    ],
+    "stylesheets": ["dist/index.css"],
+    "name": "data_grid_react_esbuild__c"
 }

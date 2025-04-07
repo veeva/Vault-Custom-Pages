@@ -1,19 +1,20 @@
 {
-  "scripts": {
-    "bundle": "node esbuild.mjs",
-    "zip": "zip --recurse-paths --filesync distribution.zip src dist distribution-manifest.json",
-    "build": "npm run bundle && npm run zip"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.13.0",
-    "@emotion/styled": "^11.13.0",
-    "@mui/material": "^5.16.6",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "@veeva/vault": "https://vault-web-sdk-releases-public.s3.us-west-2.amazonaws.com/main/veeva-vault-24.3.4-release.1.0.2.tgz"
-  },
-  "devDependencies": {
-    "esbuild": "^0.22.0",
-    "prettier": "3.3.3"
-  }
+    "scripts": {
+        "bundle": "node esbuild.mjs",
+        "zip": "zip --recurse-paths --filesync distribution.zip src dist distribution-manifest.json",
+        "build": "npm run bundle && npm run zip"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.13.0",
+        "@emotion/styled": "^11.13.0",
+        "@mui/material": "^5.16.6",
+        "@veeva/vault": "https://vault-web-sdk-releases-public.s3.us-west-2.amazonaws.com/hotfix/25.1.0/veeva-vault-25.1.0-release.1.0.5.tgz",
+        "@veeva/vault.css": "github:veeva/vault.css#v1.0.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    },
+    "devDependencies": {
+        "esbuild": "^0.22.0",
+        "prettier": "3.3.3"
+    }
 }
