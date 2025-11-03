@@ -26,11 +26,12 @@ __export(sdk_exports, {
 module.exports = __toCommonJS(sdk_exports);
 
 // core/sdk/package.json
-var version = "1.0.5";
+var version = "1.3.3";
 
 // core/sdk/index.mts
 var win = window;
 win.__vaultMeta.version = version;
-var definePage = win.__vaultModuleV5.definePage;
+function definePage(initialize) {
+  return win.__vaultModuleV5.definePage(initialize);
+}
 var vaultApiClient = win.__vaultModuleV5.vaultApiClient;
-//# sourceMappingURL=index.cjs.map

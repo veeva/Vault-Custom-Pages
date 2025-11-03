@@ -6,13 +6,13 @@
 
     <groupId>com.veeva.vault</groupId>
     <artifactId>custom-pages-hello-world-react-esbuild</artifactId>
-    <version>25.1.0</version>
+    <version>25.2.0</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <vault.sdk.version>[25.1.0-release0, 25.1.0-release1000000]</vault.sdk.version>
+        <vault.sdk.version>[25.2.0-release0, 25.2.0-release1000000]</vault.sdk.version>
     </properties>
 
     <repositories>

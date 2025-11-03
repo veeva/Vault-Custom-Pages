@@ -1,16 +1,15 @@
 /* Excluded from this release type: AnyPlugin */
 
 /**
- * definePage is the mechanism for registering Pageclientcode implementation. Vault Java SDK
- * PageControllers can pass data.
+ * Defines the Custom Page client code and registers an implementation of the `Pageclientcode` MDL component. A Vault Java SDK
+ * `PageController` can pass data using the load callback parameter.
  *
  *
- * @param initialize - The callback function that is executed from a PageController's onLoad
- * Response when first initialized.
+ * @param initialize - The load callback function with parameter type {@link PageParameters}. Provides data to the client code from
+ * Vault Java SDK's `PageController`. Executed from the `PageController#onLoad` response when
+ * the Custom Page is initialized.
  *
- * @returns A JsonObject which is returned from the response from the Vault Java SDK onEvent method
- *
- * @example Pagecliendcode implementation with Vanilla JS
+ * @example Custom Page definition using Vanilla JS
  * ```js
  *
  * export default Vault.definePage(({element, data, pageContext, sendEvent})=>{
@@ -18,7 +17,7 @@
  * });
  * ```
  *
- * @example Pagecliendcode implementation with React
+ * @example Custom Page definition using React
  * ```js
  *
  * import { createRoot } from 'react-dom/client';
@@ -32,32 +31,50 @@
  *
  * ```
  */
-export declare const definePage: <Data>(initialize: (params: PageParameters<Data>) => unknown) => unknown;
+export declare function definePage<Data>(initialize: (params: PageParameters<Data>) => unknown): unknown;
+
+/* Excluded from this release type: DialogContext */
+
+/* Excluded from this release type: DialogParameters */
+
+/* Excluded from this release type: DialogPlugin */
+
+/* Excluded from this release type: DialogSize */
+
+/* Excluded from this release type: EventNotifier */
+
+/* Excluded from this release type: EventNotifierListener */
 
 /**
- * The context which is available when a Page is run inside a browser from the definePage load callback.
+ * Represents the context available when a `Page` runs inside a browser from the `definePage` load callback.
  */
 export declare interface PageContext {
     /**
-     * Reloads the current page by calling the Vault Java SDK PageController onLoad method.
+     * Reloads the current `Page` by calling Vault Java SDK `PageController#onLoad` method.
      */
     reload: () => void;
 }
 
 /**
- * Parameter used when the definePage loadCallback is run.
+ * Represents the parameters used when the `definePage` load callback runs.
  */
 export declare interface PageParameters<Data> {
     /**
-     * Data passed in the PageLoadResponse from the Vault Java SDK PageController code to this method.
-     *
-     * @privateRemarks
-     * This comment has to be copied to all params, unless we can figure out how to use
-     * the inheritDoc tag...
+     * Data passed in the `PageLoadResponse` from Vault Java SDK `PageController` code.
      */
     data: Data;
+    /**
+     * Root HTML element to append to when writing client code.
+     */
     element: HTMLElement;
+    /**
+     * Page context providing the `reload()` function.
+     */
     pageContext: PageContext;
+    /* Excluded from this release type: onDestroy */
+    /**
+     * Function to send an event to Vault Java SDK `PageController`.
+     */
     sendEvent: SendEvent;
 }
 
@@ -65,15 +82,15 @@ export declare interface PageParameters<Data> {
 
 /* Excluded from this release type: Runtime */
 
-/**.
- * Client to fire events that the Vault Java SDK PageController onEvent method handles.
+/**
+ * Sends events to Vault Java SDK's `PageController#onEvent` method for handling.
  *
  * @param eventName - The name of the event
- * @param data - JSON data send to the server event handler
+ * @param data - JSON data to send to the server event handler
  *
- * @returns A JsonObject which is returned from the response from the Vault Java SDK onEvent method
+ * @returns Data deserialized from the `JsonObject` returned in Vault Java SDK's `PageController#onEvent` method response
  *
- * @example Usage of sendEvent and various responses
+ * @example Usage of `sendEvent` with response and error handling
  * ```js
  *     try {
  *             const response = await sendEvent("myEvent", {
@@ -95,27 +112,33 @@ export declare type SendEvent = (eventName: string, data?: unknown) => Promise<{
     data?: unknown;
 }>;
 
+/**
+ * Provides functions to use Vault API from client code.
+ **/
 export declare interface VaultApiClient {
     /**
-     * Wrapped version of `fetch` that makes authorized requests to Vault REST API
-     *   and prepends the /api prefix to the path
+     *  Makes authorized requests to Vault API and prepends the `/api` prefix to the path.
+     *  This is a wrapped version of JavaScript's `fetch` function.
      *
      * @see {@link https://developer.veevavault.com/api/}
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch}
      *
      * @remarks
      *
-     * This only supports strings for the input, so you can't use a URL or a Request object.
+     * Only accepts strings as input, not URL or Request objects.
      *
-     * This naively prepends /api to the provided URL, so if you were to call with "http://example.com",
-     *  it would make a request to "/api/http://example.com"
+     * Naively prepends `/api` to the provided URL. For example, calling this with "http://example.com"
+     *  would make a request to "/api/http://example.com".
      *
      * @param input - The URL to make a request to
-     * @param init - The options for the request
+     * @param init - The request options
      */
     fetch: (input: string, init?: RequestInit) => Promise<Response>;
 }
 
+/**
+ * The exported instance of {@link VaultApiClient}
+ */
 export declare const vaultApiClient: VaultApiClient;
 
 export { }
