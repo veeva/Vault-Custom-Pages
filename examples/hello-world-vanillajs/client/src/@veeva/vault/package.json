@@ -1,6 +1,6 @@
 {
   "name": "@veeva/vault",
-  "version": "25.2.0-release.1.3.3",
+  "version": "25.3.0-release.1.3.4",
   "main": "./index.mjs",
   "module": "./index.mjs",
   "types": "./index.d.mts",

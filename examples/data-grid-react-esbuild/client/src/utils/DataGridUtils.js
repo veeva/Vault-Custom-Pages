@@ -1,6 +1,6 @@
 import { vaultApiClient } from '@veeva/vault';
 
-const VAULT_API_VERSION = 'v25.1';
+const VAULT_API_VERSION = 'v25.3';
 const VAULT_CLIENT_ID = 'Custom-Page-Data-Grid';
 
 const URL_QUERY = '/query';

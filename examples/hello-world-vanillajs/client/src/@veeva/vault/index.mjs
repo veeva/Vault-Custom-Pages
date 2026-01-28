@@ -1,5 +1,5 @@
 // core/sdk/package.json
-var version = "1.3.3";
+var version = "1.3.4";
 
 // core/sdk/index.mts
 var win = window;
